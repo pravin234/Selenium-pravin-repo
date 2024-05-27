@@ -92,6 +92,7 @@ public class MakeMyTrip {
 			wait.until(ExpectedConditions.elementToBeClickable(adultsBtn)).click();
 //		}
 		
+			
 		
 
 //		if (childrenTraveller != null && !childrenTraveller.isEmpty()) {
