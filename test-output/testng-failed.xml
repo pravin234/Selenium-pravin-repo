@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tutorail9.OrangeHRMTest">
+      <class name="TestNGASSPackage.SauceDemoParameter">
         <methods>
-          <include name="logOutFunctionality"/>
-          <include name="personalInfo"/>
-          <include name="DashBorad"/>
-          <include name="searchEmployee"/>
-          <include name="Setup"/>
+          <include name="loginFunction"/>
+          <include name="addToCart"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- Tutorail9.OrangeHRMTest -->
+      </class> <!-- TestNGASSPackage.SauceDemoParameter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

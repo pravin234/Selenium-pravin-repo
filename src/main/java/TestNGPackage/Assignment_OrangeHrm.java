@@ -94,6 +94,9 @@ public class Assignment_OrangeHrm {
 
 		employeeID = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Employee Id']/parent::div/following-sibling::div/input"))).getAttribute("value");
 		System.out.println("Captured Employee ID: " + employeeID);
+		
+		employeeID = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//label[text()='Employee Id']/parent::div/following-sibling::div/input"))).getAttribute("value");
+		System.out.println("Captured Employee ID: " + employeeID);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("firstName"))).sendKeys("Trupti");
 		driver.findElement(By.name("lastName")).sendKeys("Kadam");
@@ -169,11 +172,7 @@ public class Assignment_OrangeHrm {
 		System.out.println("profile dropdown open");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Logout']"))).click();
-
-
 		System.out.println("Logout successfully");
-
-
 
 	}
 

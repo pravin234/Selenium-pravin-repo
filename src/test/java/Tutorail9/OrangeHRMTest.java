@@ -84,8 +84,6 @@ public class OrangeHRMTest {
 				break;
 			}
 		}
-
-
 		
 		//driver.findElement(By.xpath("//label[text()='Gender']/parent::div/following-sibling::div/descendant::span[@value='1']")).click();
 

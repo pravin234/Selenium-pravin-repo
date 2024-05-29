@@ -38,7 +38,6 @@ public class JSHistoryDemo2 {
 		js.executeScript("history.go(-1);");
 		driver.quit();
 
-
 	}
 
 }
