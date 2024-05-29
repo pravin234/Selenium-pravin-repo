@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SauceSuite">
+  <test thread-count="5" name="Test">
+	<parameter name="uname" value="standard_user" />
+	<parameter name="pass" value="secret_sauce"> </parameter>	
+    <classes>
+      <class name="Tutoral1Package.SauceDemoParameter"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- SauceSuite -->
