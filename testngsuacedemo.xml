@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <parameter name="uname" value="standard_user" />
+	<parameter name="pass" value="secret_sauce"> </parameter>	
+    <parameter name="product1" value="Sauce Labs Backpack"></parameter>
+    <parameter name="product2" value="Sauce Labs Fleece Jacket"></parameter>
+     <parameter name="product3" value="Sauce Labs Bolt T-Shirt"></parameter>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="TestNGASSPackage.SauceDemoParameter"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

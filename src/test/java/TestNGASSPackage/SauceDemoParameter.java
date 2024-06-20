@@ -32,43 +32,43 @@ public class SauceDemoParameter {
 
     @Parameters({"product1", "product2", "product3"})
     @Test(priority = 3)
-    public void addToCart(String product1, String product2, String product3) {
+    public void addToCart(String product1, String product2, String product3) throws InterruptedException {
+        Thread.sleep(3000); // It's better to use WebDriverWait instead of Thread.sleep()
         addProductToCart(product1);
         addProductToCart(product2);
         addProductToCart(product3);
+        Thread.sleep(3000); // It's better to use WebDriverWait instead of Thread.sleep()
     }
 
     private void addProductToCart(String productName) {
+        // Construct the dynamic ID attribute for the button
+        String productNameInLowerCase = productName.toLowerCase().replace(" ", "-");
+        String addToCartButtonId = "add-to-cart-" + productNameInLowerCase;
+        WebElement addToCartButton = driver.findElement(By.id(addToCartButtonId));
+        addToCartButton.click();
+    }
+
+    @Test(priority = 4)
+    public void cartPage() throws InterruptedException {
         try {
-            // Construct the dynamic ID attribute for the button
-            String productNameInLowerCase = productName.toLowerCase().replace(" ", "-");
-            String addToCartButtonId = "add-to-cart-" + productNameInLowerCase;
-            WebElement addToCartButton = driver.findElement(By.id(addToCartButtonId));
-            addToCartButton.click();
+            driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
+            driver.findElement(By.xpath("//button[@name='checkout']")).submit();
         } catch (Exception e) {
-            System.err.println("Product not found or could not be added to the cart: " + productName);
+            System.out.println("Exception occurred in cartPage: " + e.getMessage());
         }
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+    @Test(priority = 5)
+    public void personalInfo() throws InterruptedException {
+        driver.findElement(By.id("first-name")).sendKeys("Pravin");
+        driver.findElement(By.id("last-name")).sendKeys("Kadam");
+        driver.findElement(By.id("continue")).click(); // Corrected the locator for the continue button
     }
-} 
 
-
-
-//
-
-
-
-
-
-
-
-
-
-
-
+//    @AfterClass
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
+}

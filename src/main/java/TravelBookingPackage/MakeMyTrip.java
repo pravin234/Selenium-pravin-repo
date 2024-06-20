@@ -42,10 +42,31 @@ public class MakeMyTrip {
 		
 		Thread.sleep(5000);
 
-		// Handle potential notification and modal dialogs 
-		WebElement closeModalButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='commonModal__close']")));
+//		// Handle potential notification and modal dialogs 
+//		WebElement closeModalButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='commonModal__close']")));
+//		
+//		closeModalButton.click();
 		
-		closeModalButton.click();
+		// Handle potential notification and modal dialogs
+        try {
+            WebElement notificationFrame = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[starts-with(@title, 'notification-frame')]")));
+            driver.switchTo().frame(notificationFrame);
+            WebElement closeNotificationButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='wewidgeticon we_close']")));
+            closeNotificationButton.click();
+            driver.switchTo().defaultContent();
+        } catch (Exception e) {
+            // No notification frame found, continue execution
+            driver.switchTo().defaultContent();
+        }
+
+        try {
+            WebElement closeModalButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='commonModal__close']")));
+            closeModalButton.click();
+        } catch (Exception e) {
+            // No modal found, continue execution
+        }
+
+
 
 		// Interact with the "From" city input field
 		driver.findElement(By.xpath("//label[@for='fromCity']")).click();

@@ -30,6 +30,7 @@ public class MakeMyTrip1 {
 		WebElement notificationFrame = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[starts-with(@title, 'notification-frame')]")));
 		driver.switchTo().frame(notificationFrame);
 
+		
 		WebElement closeNotificationButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[@class='wewidgeticon we_close']")));
 		closeNotificationButton.click();
 		

@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNGASSPackage.SauceDemoParameter">
+      <class name="TestNGParallel.Demo1">
         <methods>
-          <include name="loginFunction"/>
-          <include name="addToCart"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="facebookTestCase1"/>
         </methods>
-      </class> <!-- TestNGASSPackage.SauceDemoParameter -->
+      </class> <!-- TestNGParallel.Demo1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
